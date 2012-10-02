@@ -91,7 +91,7 @@ final class FastArchive : Archive//ArchiveBase!(ubyte)
 	/// Returns the data stored in the archive in an untyped form.
 	UntypedData untypedData ()
 	{
-		return rawData;
+		return data;
 	}
 
 	/// Returns the data stored in the archive in an typed form.
@@ -1739,7 +1739,7 @@ private:
 	}
 
 	T read (T) ()
-	{
+	{println(rawData.length);
 		return cast(T) rawData.read!(BitType!(T));
 	}
 
